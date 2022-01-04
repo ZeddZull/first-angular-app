@@ -1,1 +1,12 @@
+<input [(ngModel)]="n">
+<p>{{n}}</p>
+<button class="btn" type="button" name="button" (click)="goToProduct()">Voir le produit</button>
+
+<ul class ="nav nav-pills">
+
+  <li *ngFor="let item of routes" class="nav-item" >
+    <a href="#" routerLink="{{'/' + item.path.replace(':id', n)}}" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]='{exact:true}'>{{item.label}}</a>
+  </li>
+</ul>
+
 <router-outlet></router-outlet>

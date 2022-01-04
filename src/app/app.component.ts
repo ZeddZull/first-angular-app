@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {Router} from '@angular/router';
 import { PersonFormStateInterface } from './components/person-form/person-form.component';
+import { routes } from './app.module';
 
 export interface PersonInterface {
   name: string;
@@ -12,10 +14,11 @@ export interface PersonInterface {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  price = 5;
-  catalog = [
-    {label: 'souris', price:5},
-    {label: 'ordi', price:500},
-    {label: 'ecran', price:500}
-  ]
+  n = 2713;
+  routes = routes;
+  constructor(private router: Router){}
+
+  goToProduct() {
+    this.router.navigate(['/product', this.n]);
+  }
 }
