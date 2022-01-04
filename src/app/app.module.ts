@@ -15,6 +15,7 @@ export const routes = [
   {path: 'production', component: ProductionComponent, label: 'Production'}
 ]
 const appRoutes: Routes = routes.map(item => {return {path: item.path, component: item.component}});
+appRoutes.push({path: 'home', redirectTo: '/', pathMatch: 'full'});
 @NgModule({
   declarations: [
     AppComponent,
