@@ -1,26 +1,12 @@
-
+<app-price [(amount)]="price"></app-price>
+<div>{{ price }}</div>
+<div >
+  {{catalog | json}}
+</div>
 <div class="p-4">
-  
-
-  <app-person-form-message
-  [isFormValid]="isFormValid"
-  [isFormTouched]="isFormTouched"
-  >
-
-  </app-person-form-message>
-
-  <app-person-form 
-  [person]="person"
-  (onSubmit)="addPerson($event)" 
-  (onFormTouched)="checkTouched($event)"
-  (onFormCheck)="checkForm($event)"
-  ></app-person-form>
-
-  <ul class="list-group">
-      <app-person 
-        *ngFor="let person of personList; let even=even; let pos=index" 
-        [person]="person" [even]="even" [pos]="pos"
-        (onDeletePerson)="onDelete($event)">
-      </app-person>
-  </ul>
+  <div *ngFor="let item of catalog">
+    <h3>{{item.labe}}</h3>
+    <app-price [(amount)]="item.price"></app-price>
+    <hr>
+  </div>
 </div>

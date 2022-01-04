@@ -6,13 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { PersonComponent } from './components/person/person.component';
 import { PersonFormComponent } from './components/person-form/person-form.component';
 import { PersonFormMessageComponent } from './components/person-form-message/person-form-message.component';
+import { PriceComponent } from './price/price.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonComponent,
     PersonFormComponent,
-    PersonFormMessageComponent
+    PersonFormMessageComponent,
+    PriceComponent
   ],
   imports: [
     BrowserModule,
