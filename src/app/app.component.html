@@ -1,1 +1,4 @@
 <h1> {{ hello.greet() }} </h1>
+<select [(ngModel)]="hello.currentLocale">
+  <option *ngFor="let lg of hello.getLanguages()" value="{{lg}}">{{ lg }}</option>
+</select>
