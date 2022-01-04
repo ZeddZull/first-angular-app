@@ -1,4 +1,3 @@
-<h1> {{ hello.greet() }} </h1>
-<select [(ngModel)]="hello.currentLocale">
-  <option *ngFor="let lg of hello.getLanguages()" value="{{lg}}">{{ lg }}</option>
-</select>
+<a class="btn btn-primary" routerLink="/page2" href="#">Allez a la page 2</a>
+<a class="btn btn-primary" routerLink="/home" href="#">Home</a>
+<router-outlet></router-outlet>
