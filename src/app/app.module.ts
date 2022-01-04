@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { ProductionComponent } from './production/production.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 export const routes = [
   {path: '', component: HomeComponent, label: 'Home'},
   {path: 'contact', component: ContactComponent, label: 'Contact'},
@@ -15,7 +16,10 @@ export const routes = [
   {path: 'production', component: ProductionComponent, label: 'Production'}
 ]
 const appRoutes: Routes = routes.map(item => {return {path: item.path, component: item.component}});
-appRoutes.push({path: 'home', redirectTo: '/', pathMatch: 'full'});
+[
+  {path: 'home', redirectTo: '/', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent}
+].map(item => appRoutes.push(item));
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,8 @@ appRoutes.push({path: 'home', redirectTo: '/', pathMatch: 'full'});
     ContactComponent,
     HomeComponent,
     ProductComponent,
-    ProductionComponent
+    ProductionComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
