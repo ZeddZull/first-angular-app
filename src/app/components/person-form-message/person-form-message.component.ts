@@ -6,13 +6,5 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./person-form-message.component.css']
 })
 export class PersonFormMessageComponent implements OnInit {
-
-  @Input() isFormValid: boolean;
-  @Input() isFormTouched: boolean;
-
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

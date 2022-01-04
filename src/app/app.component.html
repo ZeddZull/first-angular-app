@@ -1,12 +1,1 @@
-<app-price [(amount)]="price"></app-price>
-<div>{{ price }}</div>
-<div >
-  {{catalog | json}}
-</div>
-<div class="p-4">
-  <div *ngFor="let item of catalog">
-    <h3>{{item.labe}}</h3>
-    <app-price [(amount)]="item.price"></app-price>
-    <hr>
-  </div>
-</div>
+<router-outlet></router-outlet>

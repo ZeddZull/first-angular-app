@@ -1,24 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { PersonComponent } from './components/person/person.component';
-import { PersonFormComponent } from './components/person-form/person-form.component';
-import { PersonFormMessageComponent } from './components/person-form-message/person-form-message.component';
 import { PriceComponent } from './price/price.component';
+import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './home/home.component';
+import { ProductComponent } from './product/product.component';
 
+const appRoutes: Routes = [
+  {path: 'home', component: HomeComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'product', component: ProductComponent}
+]
 @NgModule({
   declarations: [
     AppComponent,
-    PersonComponent,
-    PersonFormComponent,
-    PersonFormMessageComponent,
-    PriceComponent
+    PriceComponent,
+    ContactComponent,
+    HomeComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
